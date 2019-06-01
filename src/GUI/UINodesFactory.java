@@ -23,7 +23,7 @@ public class UINodesFactory {
    * @param weight distance for the graph
    * @return a line to be displayed
    */
-  public static LinkingLine createLine (Node start, Node end, int weight) {
+  public static LinkingLine createLine (Node start, Node end, Integer weight) {
     Label label = new Label(Integer.toString(weight));
     Line line = new Line();
     DropShadow dropShadow = new DropShadow();
@@ -49,7 +49,7 @@ public class UINodesFactory {
    * @param coordy y starting location
    * @return the Node
    */
-  public static Node createNode(String name, int coordx, int coordy) {
+  public static Node createNode(String name, Integer coordx, Integer coordy) {
     Circle ring =
         new Circle(
                 coordx, coordy, 65, Color.web("#e7cc8f"));

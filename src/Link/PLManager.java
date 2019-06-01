@@ -28,7 +28,7 @@ public class PLManager {
    * @param distance Kilometers of distance
    * @throws IOException if there is a problem with the fil
    */
-  public void addArcs (String start, String destiny, int distance) throws IOException {
+  public void addArcs (String start, String destiny, Integer distance) throws IOException {
     try (BufferedWriter writer = new BufferedWriter(new FileWriter("arcos.pl", true))) {
       String newArc =
               "\n"
@@ -73,8 +73,8 @@ public class PLManager {
    * @return returns ArrayList with all the places on the route
    */
   private ArrayList<String> cleanData(String prologOut) {
-    int length = prologOut.length();
-    int i = 0;
+    Integer length = prologOut.length();
+    Integer i = 0;
     StringBuilder tempChar = new StringBuilder();
     ArrayList<String> result = new ArrayList<>();
     while (length != i) {
@@ -95,8 +95,8 @@ public class PLManager {
    * @return a clean string
    */
   private String getData (String prologOut) {
-    int length = prologOut.length();
-    int i = 0;
+    Integer length = prologOut.length();
+    Integer i = 0;
     StringBuilder result = new StringBuilder();
     while (length != i) {
       String tempChar = Character.toString(prologOut.charAt(i));
@@ -119,13 +119,13 @@ public class PLManager {
    * @return an ArrayList with all the places from prolog file
    */
   public ArrayList<String> getPlaces() {
-    String prologPl = "consult('Lugares.pl')"; // consulta prolog
+    String prologPl = "consult('Lugares.pl')";
     Query query1 = new Query(prologPl);
     System.out.println(prologPl + (query1.hasSolution() ? "Connected" : "Connection Failed"));
     ArrayList<String> result = new ArrayList<>();
     String places = "lugares(X)";
     Query query2 = new Query(places);
-    Map<String, Term>[] allSolutions = query2.allSolutions(); // obtiene todas las soluciones
+    Map<String, Term>[] allSolutions = query2.allSolutions();
     for (Map<String, Term> allSolution : allSolutions) {
       result.add(getData(allSolution.get("X").toString()));
     }

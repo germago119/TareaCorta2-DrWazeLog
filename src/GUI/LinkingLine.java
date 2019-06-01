@@ -7,7 +7,7 @@ import javafx.scene.text.Font;
 import model.Graph;
 
 public class LinkingLine {
-  int weight;
+  Integer weight;
   public Node start;
   public Node end;
   public Label weightLabel;
@@ -21,7 +21,7 @@ public class LinkingLine {
    * @param weightLabel label displaying distance
    * @param line
    */
-  LinkingLine (Node start, Node end, int weight, Label weightLabel, Line line) {
+  LinkingLine (Node start, Node end, Integer weight, Label weightLabel, Line line) {
     this.start = start;
     this.end = end;
     this.weight = weight;

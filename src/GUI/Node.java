@@ -60,7 +60,7 @@ public class Node {
           Optional<NewInput> optionalResult = dialog.showAndWait();
         optionalResult.ifPresent(
                 (NewInput results) -> {
-              int x;
+              Integer x;
               try {
                 x = Integer.parseInt(results.weight);
               } catch (Exception e) {
@@ -242,7 +242,7 @@ public class Node {
               Optional<NewInput> optionalResult = dialog.showAndWait();
         optionalResult.ifPresent(
                 (NewInput results) -> {
-              int x;
+              Integer x;
               try {
                 x = Integer.parseInt(results.weight);
               } catch (Exception e) {

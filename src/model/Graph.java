@@ -33,10 +33,10 @@ public class Graph {
    * @return a list that matches arcs to the route
    */
   public static ArrayList<LinkingLine> getLines (ArrayList<Node> ways) {
-    int x = ways.size();
-    int i = 0;
+    Integer size = ways.size();
+    Integer i = 0;
     ArrayList<LinkingLine> linkingLines = new ArrayList<>();
-    while (i < x - 1) {
+    while (i < size - 1) {
       linkingLines.add(getArcs(ways.get(i), ways.get(i + 1)));
       i++;
     }
@@ -80,7 +80,7 @@ public class Graph {
    * @return a Node with the matching name
    */
   public static Node getNode(String name) {
-    int i = 0;
+    Integer i = 0;
     while (i != nodes.size()) {
       if (nodes.get(i).getnode_name().equals(name)) {
         return nodes.get(i);

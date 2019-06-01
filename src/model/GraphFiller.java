@@ -24,7 +24,7 @@ public class GraphFiller {
       String endName = arc.get(1);
       endName = endName.replaceAll("\\s+", "");
       Node end = Graph.getNode(endName);
-      int weight = Integer.parseInt(arc.get(2));
+      Integer weight = Integer.parseInt(arc.get(2));
       if (end != null) {
         UINodesFactory.createLine(Objects.requireNonNull(start), end, weight);
       }
@@ -45,9 +45,9 @@ public class GraphFiller {
     integers.add(30);
     ArrayList<String> nodesList = plManager.getPlaces();
     
-    int coordX = 100;
-    int coordY = 100;
-    for (int i = 0; i < nodesList.size(); i++) {
+    Integer coordX = 100;
+    Integer coordY = 100;
+    for (Integer i = 0; i < nodesList.size(); i++) {
       if (integers.contains(i)) {
         coordX = 100;
         coordY += 400;
